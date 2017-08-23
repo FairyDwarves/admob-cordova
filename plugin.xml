@@ -11,7 +11,7 @@
     </description>
     <license>Apache 2.0 License</license>
     <repo>https://github.com/admob-google/admob-cordova</repo>
-	<issue>https://github.com/admob-google/admob-cordova/issues</issue>
+    <issue>https://github.com/admob-google/admob-cordova/issues</issue>
     <engines>
         <engine name="cordova" version=">=3.0" />
     </engines>
@@ -24,27 +24,26 @@
                 <param name="android-package" value="com.admob.cordova.plugin.AdmobAdPlugin"/>
             </feature>
         </config-file>
+        
+        <framework src="com.google.android.gms:play-services-ads:+" />
+        
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-		 <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+             <activity
+                android:name="com.google.android.gms.ads.AdActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+                android:theme="@android:style/Theme.Translucent" />
         </config-file>
+        
         <config-file target="AndroidManifest.xml" parent="/*">
              <uses-permission android:name="android.permission.INTERNET"/>
-			    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-			    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+                <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+                <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
         </config-file>
         
         <source-file src="src/android/libs/admobadplugin.jar" target-dir="libs/"/>
-        <source-file src="src/android/libs/play-services-ads-9.4.0.jar" target-dir="libs/"/>
-        <source-file src="src/android/libs/play-services-ads-lite-9.4.0.jar" target-dir="libs/"/>
-        <source-file src="src/android/libs/play-services-base-9.4.0.jar" target-dir="libs/"/>
-        <source-file src="src/android/libs/play-services-basement-9.4.0.jar" target-dir="libs/"/>
-        <resource-file src="src/android/res" target="res/" />
     </platform>
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
@@ -55,7 +54,7 @@
         <source-file  src="src/ios/AdmobAdPlugin.m"/>
         <header-file  src="src/ios/AdmobAdPlugin.h"/>
         <framework src="src/ios/AdmobAPI.framework" custom="true"/>
-	    <framework src="EventKit.framework"/>
+        <framework src="EventKit.framework"/>
         <framework src="EventKitUI.framework"/>
         <framework src="StoreKit.framework"/>
         <framework src="AdSupport.framework"/>
